@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{43916D6E-2DDA-43B6-9A1F-72AF8106AF81}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NotifytriggerConsole/Program.cs">
+    <Files>
+      <File FileName="NotifytriggerConsole/Program.cs" Line="92" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NotifytriggerConsole" expanded="True">
+            <Node name="NotifytriggerConsole" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.NotifytriggerConsole PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.11
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifytriggerConsole", "NotifytriggerConsole\NotifytriggerConsole.csproj", "{43916D6E-2DDA-43B6-9A1F-72AF8106AF81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43916D6E-2DDA-43B6-9A1F-72AF8106AF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43916D6E-2DDA-43B6-9A1F-72AF8106AF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43916D6E-2DDA-43B6-9A1F-72AF8106AF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43916D6E-2DDA-43B6-9A1F-72AF8106AF81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E22AC95-505D-45C7-A5C1-B510BF28CBF7}
+	EndGlobalSection
+EndGlobal
