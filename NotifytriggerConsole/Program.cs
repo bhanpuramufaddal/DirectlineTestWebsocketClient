@@ -18,9 +18,10 @@ namespace NotifytriggerConsole
     {
         static async Task Main(string[] args)
         {
-            //string botId = "ValuenceTechBot";
-            string directLineSecret = "insert your directline secret";
-            string fromUser = "DirectLineSampleClientUser";
+            //input bot id and directline secret
+            string directLineSecret = "insert directline secret";
+            string botId = "insert bot id";
+            string fromUser = "DirectLineSampleClient";
             var tokenResponse = await new DirectLineClient(directLineSecret).Tokens.GenerateTokenForNewConversationAsync();
             var directLineClient1 = new DirectLineClient(tokenResponse.Token);
             //var directLineClient2 = new DirectLineClient(tokenResponse.Token);
@@ -35,7 +36,6 @@ namespace NotifytriggerConsole
             IDictionary<string,IList<Activity>> Response = new Dictionary<string,IList<Activity>>();
 
             webSocketClient1.OnMessage += (object sender, MessageEventArgs e) => {
-                string botId = "ValuenceTechBot";
 
                 // Occasionally, the Direct Line service sends an empty message as a liveness ping. Ignore these messages.
                 if (string.IsNullOrWhiteSpace(e.Data))
@@ -46,10 +46,21 @@ namespace NotifytriggerConsole
                 var activitySet = JsonConvert.DeserializeObject<ActivitySet>(e.Data);
                 var activities = from x in activitySet.Activities
                                  where x.From.Id == botId
+                                 where x.ReplyToId != null
                                  select x;
-                if (activities.First().ReplyToId == null) { return; }
-                IList<Activity> ActivityList = activities.ToList();
-                Response.Add(ActivityList.First().ReplyToId, ActivityList);
+                foreach(Activity activity in activities)
+                {
+                    //Console.WriteLine(JsonConvert.SerializeObject(activity));
+
+                    if (Response.ContainsKey(activity.ReplyToId))
+                    {
+                        Response[activity.ReplyToId].Add(activity);
+                    }
+                    else
+                    {
+                        Response[activity.ReplyToId] = new List<Activity>() { activity };
+                    }
+                }
 
             };
 
@@ -66,7 +77,6 @@ namespace NotifytriggerConsole
                 From = new ChannelAccount(fromUser),
                 Text = input1,
                 Type = ActivityTypes.Message,
-                Attachments = new List<Attachment>()
             };
 
             var userMessage2 = new Activity
