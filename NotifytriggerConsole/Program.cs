@@ -19,7 +19,7 @@ namespace NotifytriggerConsole
         static async Task Main(string[] args)
         {
             //string botId = "ValuenceTechBot";
-            string directLineSecret = "m3qp2jc5ork.44RR5SOZXeyeExq6BxxAhFXtxSTYgaXpCo3THOTyjwg";
+            string directLineSecret = "insert your directline secret";
             string fromUser = "DirectLineSampleClientUser";
             var tokenResponse = await new DirectLineClient(directLineSecret).Tokens.GenerateTokenForNewConversationAsync();
             var directLineClient1 = new DirectLineClient(tokenResponse.Token);
